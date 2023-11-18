@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <string> <substring>"
+	exit 1
+fi
+input_string="$1"
+sub_string="$2"
+
+count=$(echo "$input_string" | grep -o "$sub_string" | wc -l)
+
+echo "Occurrence of '$sub_string' in '$input_string' : $count "
